@@ -73,12 +73,16 @@ class _GifsState extends State<Gifs> {
 
     for (var e in data) {
       gifs.add(Card(
-          child: Expanded(
-        child: Image.network(
-          e.url,
-          fit: BoxFit.fill,
-        ),
-      )));
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.network(
+            e.url,
+            fit: BoxFit.fill,
+          ),
+        ), // Para el border radius
+      ));
     }
     return gifs;
   }
