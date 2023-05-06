@@ -6,36 +6,26 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-        backgroundColor: Colors.green,
+    return Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+        image: NetworkImage(
+            'https://i.pinimg.com/564x/78/06/ab/7806abf4c1497b433c9b4bfc67b0ac5e.jpg'),
+        fit: BoxFit.cover,
+      )),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            text('Sign in'),
+            userInput(),
+            passwordInput(),
+            button(context),
+          ],
+        ),
       ),
-      body: body(context),
     );
   }
-}
-
-Widget body(BuildContext context) {
-  return Container(
-    decoration: const BoxDecoration(
-        image: DecorationImage(
-      image: NetworkImage(
-          'https://i.pinimg.com/564x/78/06/ab/7806abf4c1497b433c9b4bfc67b0ac5e.jpg'),
-      fit: BoxFit.cover,
-    )),
-    child: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          text('Sign in'),
-          userInput(),
-          passwordInput(),
-          button(context),
-        ],
-      ),
-    ),
-  );
 }
 
 Widget text(value) {

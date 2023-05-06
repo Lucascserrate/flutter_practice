@@ -16,24 +16,20 @@ class ContactsState extends State<Contacts> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Contacts'),
-        ),
-        body: ListView.builder(
-          itemCount: _people.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              onLongPress: () => _deletePerson(context, _people[index]),
-              title: Text('${_people[index].name} ${_people[index].lastname}'),
-              subtitle: Text(_people[index].phone),
-              leading: CircleAvatar(
-                child: Text(_people[index].name.substring(0, 1)),
-              ),
-              trailing: const Icon(Icons.delete),
-            );
-          },
-        ));
+    return ListView.builder(
+      itemCount: _people.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          onLongPress: () => _deletePerson(context, _people[index]),
+          title: Text('${_people[index].name} ${_people[index].lastname}'),
+          subtitle: Text(_people[index].phone),
+          leading: CircleAvatar(
+            child: Text(_people[index].name.substring(0, 1)),
+          ),
+          trailing: const Icon(Icons.delete),
+        );
+      },
+    );
   }
 
   _deletePerson(context, People person) {
