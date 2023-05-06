@@ -41,30 +41,22 @@ class _GifsState extends State<Gifs> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Gifs'),
-        ),
-        body: FutureBuilder(
-          future: gifsList,
-          // initialData: InitialData,
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            if (snapshot.hasData) {
-              return GridView.count(
-                crossAxisCount: 2,
-                children: listGifs(snapshot.data),
-              );
-            } else if (snapshot.hasError) {
-              return const Text('error');
-            }
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          },
-        ),
-      ),
+    return FutureBuilder(
+      future: gifsList,
+      // initialData: InitialData,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.hasData) {
+          return GridView.count(
+            crossAxisCount: 2,
+            children: listGifs(snapshot.data),
+          );
+        } else if (snapshot.hasError) {
+          return const Text('error');
+        }
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 
