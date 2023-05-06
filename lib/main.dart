@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/pages/gifs.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,12 +10,27 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        body: Gifs(),
+        appBar: AppBar(
+          title: const Text('Material App'),
+        ),
+        body: const Center(child: Text('Hola')),
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (index) => setState(() => currentPage = index),
+          currentIndex: currentPage,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.supervised_user_circle), label: 'User'),
+          ],
+        ),
       ),
     );
   }
