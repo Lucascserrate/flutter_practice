@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math'; // es como el Math.random de JS
 
 import 'package:flutter/material.dart';
 
