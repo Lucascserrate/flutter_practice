@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/inherit_props/page_main.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,22 +13,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Drawer'),
-          ),
-          drawer: Drawer(
-            child: Container(
-              child: Column(
-                children: [],
-              ),
-            ),
-          ),
-          body: const Center(
-            child: Text('data'),
-          ),
-        ));
+    return const MaterialApp(
+      home: Home(),
+    );
   }
 }
