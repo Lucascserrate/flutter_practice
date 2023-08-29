@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/pages/terms.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -73,10 +72,7 @@ Widget button(BuildContext context) {
             const EdgeInsets.symmetric(horizontal: 50.0)),
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
         backgroundColor: MaterialStateProperty.all<Color>(Colors.green)),
-    onPressed: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Terms()));
-    },
+    onPressed: () {},
     child: const Text('Enter'),
   );
 }

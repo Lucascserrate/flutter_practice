@@ -1,9 +1,9 @@
 // Este es un ejemplo de una screen que tiene una navegacion
 import 'package:flutter/material.dart';
-import 'package:flutterapp/pages/contacts.dart';
-import 'package:flutterapp/pages/gifs.dart';
-import 'package:flutterapp/pages/login.dart';
-import 'package:flutterapp/pages/nav_bar.dart';
+import 'package:flutterapp/presentation/pages/contacts.dart';
+import 'package:flutterapp/presentation/pages/gifs.dart';
+import 'package:flutterapp/presentation/pages/login.dart';
+import 'package:flutterapp/presentation/pages/nav_bar.dart';
 
 class HomeNavBar extends StatefulWidget {
   const HomeNavBar({super.key});

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/main.dart';
 
 class Terms extends StatelessWidget {
-  const Terms({super.key});
+  final String texto;
+  const Terms(this.texto, {super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +34,8 @@ class Terms extends StatelessWidget {
               'Para usar esta aplicacion es necesario que aceptes los terminos y condiciones, Para usar esta aplicacion es necesario que aceptes los terminos y condiciones, Para usar esta aplicaciobn es necesario que aceptes los terminos y condiciones',
               textAlign: TextAlign.justify,
             ),
+            const SizedBox(height: 10),
+            Text(texto),
             const SizedBox(height: 15),
             ElevatedButton(
               style: ButtonStyle(
